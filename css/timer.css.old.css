@@ -1,0 +1,144 @@
+﻿/* Default settings for page content */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    text-align: center;
+    background-color: black;
+    font-size: 10pt;
+}
+
+/* Make the input boxes and buttons grey */
+input,
+button {
+    background-color: black;
+    border: solid 1px #151515; /* dark grey */
+    color: #151515; /* dark grey */
+}
+
+/* Other button styles */
+button
+{
+    cursor: pointer;
+}
+
+button:disabled
+{
+    cursor: not-allowed;
+}
+
+/* Make template divs hidden */
+div.template
+{
+    display: none !important;
+}
+
+/* Make divs and spans Absolute positioned by default */
+div,
+span {
+    position: absolute;
+}
+
+/* Div that contains the input boxes & buttons */
+div.start {
+    bottom: 10px;
+    color: #151515; /* dark grey */
+    position: fixed;
+    text-align: center;
+    width: 100%;
+}
+
+/* Position and size container divs relative to the page */
+div.tophalf, div.bottomhalf {
+    left: 0;
+    width: 100%;
+    height: 50%;
+}
+
+div.tophalf {
+    top: 0;
+}
+
+div.bottomhalf {
+    top: 50%;
+}
+
+div.topleft, div.topright, div.bottomleft, div.bottomright {
+    width: 50%;
+    height: 45%;
+}
+
+div.topleft {
+    top: 0;
+    left: 0;
+}
+
+div.topright {
+    top: 0;
+    right: 0;
+}
+
+div.bottomleft {
+    bottom: 0;
+    left: 0;
+}
+
+div.bottomright {
+    bottom: 0;
+    right: 0;
+}
+
+/* Position timer div */
+#upnlCountDown1, #upnlCountDown2, #upnlCountDown3 {
+    width: 100%;
+    height: 100%;
+}
+
+/* Size and format content */
+span.timer, span.timer2, span.description {
+    width: 100%;
+    font-weight: 900;
+    color: white;
+    font-family: Calibri;
+    height: auto;
+}
+
+span.description {
+    top: 20%;
+}
+
+span.timer, span.timer2 {
+    top: 40%;
+}
+
+div.tophalf span.description,
+div.bottomhalf span.description {
+    font-size: 140pt;
+}
+
+div.topleft span.description,
+div.topright span.description,
+div.bottomleft span.description,
+div.bottomright span.description {
+    font-size: 100pt;
+}
+
+div.tophalf span.timer, div.tophalf span.timer2,
+div.bottomhalf span.timer, div.bottomhalf span.timer2 {
+    font-size: 275pt;
+}
+
+div.topleft span.timer, div.topleft span.timer2,
+div.topright span.timer, div.topright span.timer2,
+div.bottomleft span.timer, div.bottomleft span.timer2,
+div.bottomright span.timer, div.bottomright span.timer2 {
+    font-size: 150pt;
+}
+
+/* This is used to make text "blink" */
+span.timer2 {
+    color: #83302E; /* dark red */
+}

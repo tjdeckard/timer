@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>timer</title>
+
+        <!-- Viewport settings for Bootstrap -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <!-- Stylesheets -->
+        <link href="css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
+        <!--<link href="css/bootstrap-theme.min.css" media="screen" rel="stylesheet" type="text/css">-->
+        <link href="css/timer.css" media="screen" rel="stylesheet" type="text/css">
+        
+        <!-- Scripts -->
+        <!--[if lt IE 9]><script type="text/javascript" src="/js/html5shiv.js"></script><![endif]-->
+        <!--[if lt IE 9]><script type="text/javascript" src="/js/respond.min.js"></script><![endif]-->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/modernizr-custom.min.js"></script>
+        <script src="js/TimerClass.js"></script>
+        <script src="js/TimerCollectionClass.js"></script>
+        <script src="js/timer.js"></script>
+    </head>
+    <body>
+        <main class="container">
+            <div class="row">&nbsp;</div>
+            <div class="row">
+                <div class="col-md-3" id="pnlAddTimer1">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" id="pnlAddTimerHeading1">
+                            <h3 class="panel-title">Add timer</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form>
+                                <input type="hidden" name="txtId" id="txtId" value="1">
+                                <div class="form-group">
+                                    <input type="text" name="txtLabel" id="txtLabel" class="form-control" placeholder="Label">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="txtDuration" id="txtDuration" class="form-control" placeholder="Duration (in minutes)">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="txtOffset" id="txtOffset" class="form-control" placeholder="Start after previous timer (in minutes)" value="0">
+                                </div>
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-primary btn-block" onclick="return registerTimer('#txtId', '#txtLabel', '#txtDuration', '#txtOffset')">Add</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3" id="pnlAddTimer2">
+                </div>
+                <div class="col-md-3" id="pnlAddTimer3">
+                </div>
+                <div class="col-md-3" id="pnlAddTimer4">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">When all timers are setup...</h3>
+                        </div>
+                        <div class="panel-body">
+                            <button type="button" class="btn btn-primary btn-block" onclick="return toggleView()">Click here to switch to Timer View</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="pnlTimerView" class="timer-view hidden">
+                <div id="pnlTimer1" class="hidden">
+                    <span id="lblDescription1" class="description"></span>
+                    <span id="lblCountDown1" class="timer hidden"></span>
+                </div>
+                <div id="pnlTimer2" class="hidden">
+                    <span id="lblDescription2" class="description"></span>
+                    <span id="lblCountDown2" class="timer hidden"></span>
+                </div>
+                <div id="pnlTimer3" class="hidden">
+                    <span id="lblDescription3" class="description"></span>
+                    <span id="lblCountDown3" class="timer hidden"></span>
+                </div>
+                <div class="timer-view-buttons">
+                    <button type="button" class="btn btn-default btn-xs" onclick="return showNextTimer()">Show Next</button>
+                    <button id="btnStartTimers" type="button" class="btn btn-default btn-xs" onclick="return startTimers()">Start Timers!</button>
+                    <button id="btnStopTimers" type="button" class="btn btn-default btn-xs hidden" onclick="return stopTimers()">Stop Timers</button>
+                    <button type="button" class="btn btn-default btn-xs" onclick="return toggleView()">Back to Setup View</button>
+                </div>
+            </div>
+        </main>
+        <!-- Template divs -->
+        <div id="tmplAddTimer" class="template">
+            <div class="panel panel-default">
+                <div class="panel-heading" id="pnlAddTimerHeading1">
+                    <h3 class="panel-title">Add timer</h3>
+                </div>
+                <div class="panel-body">
+                    <form>
+                        <input type="hidden" name="txtId" id="txtId" value="">
+                        <div class="form-group">
+                            <input type="text" name="txtLabel" id="txtLabel" class="form-control" placeholder="Label">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="txtDuration" id="txtDuration" class="form-control" placeholder="Duration (in minutes)">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="txtOffset" id="txtOffset" class="form-control" placeholder="Start after previous timer (in minutes)">
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-primary btn-block" onclick="return registerTimer('#txtId', '#txtLabel', '#txtDuration', '#txtOffset')">Add</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

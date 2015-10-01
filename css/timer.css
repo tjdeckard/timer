@@ -1,0 +1,190 @@
+﻿/************************
+ * Non-Bootstrap styles *
+ ************************/
+
+body
+{
+    background-color: #000;
+}
+
+/* Make template divs hidden */
+div.template
+{
+    display: none;
+}
+
+/* Timer div styles */
+.timer-view
+{
+    background-color: #000;
+    display: initial;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.top-half,
+.bottom-half,
+.top-left-quad,
+.top-right-quad,
+.bottom-left-quad,
+.bottom-right-quad
+{
+    color: #fff;
+    display: table-cell;
+    font-weight: 900;
+    height: 50%;
+    overflow: visible;
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.top-half, .bottom-half
+{
+    width: 100%;
+}
+
+.top-half
+{
+    top: 0;
+}
+
+.bottom-half
+{
+    top: 50%;
+}
+
+.top-left-quad,
+.top-right-quad,
+.bottom-left-quad,
+.bottom-right-quad
+{
+    width: 50%;
+}
+
+.top-left-quad,
+.top-right-quad
+{
+    top: 0;
+}
+
+.bottom-left-quad,
+.bottom-right-quad
+{
+    bottom: 0;
+}
+
+.top-half,
+.bottom-half,
+.top-left-quad,
+.bottom-left-quad
+{
+    left: 0;
+}
+
+.top-right-quad,
+.bottom-right-quad
+{
+    right: 0;
+}
+
+.top-half > span,
+.bottom-half > span,
+.top-left-quad > span,
+.top-right-quad > span,
+.bottom-left-quad > span,
+.bottom-right-quad > span
+{
+    display: block;
+    position: relative;
+}
+
+.top-half .description,
+.bottom-half .description
+{
+    font-size: 140pt;
+}
+
+.top-left-quad .description,
+.top-right-quad .description,
+.bottom-left-quad .description,
+.bottom-right-quad .description
+{
+    font-size: 100pt;
+    top: 20%;
+}
+
+.top-half .timer,
+.top-half .timer2,
+.bottom-half .timer,
+.bottom-half .timer2
+{
+    font-size: 300pt;
+    line-height: 275pt;
+}
+
+.top-left-quad .timer,
+.top-left-quad .timer2,
+.top-right-quad .timer,
+.top-right-quad .timer2,
+.bottom-left-quad .timer,
+.bottom-left-quad .timer2,
+.bottom-right-quad .timer,
+.bottom-right-quad .timer2
+{
+    font-size: 175pt;
+    top: 10%;
+}
+
+.timer2
+{
+    color: #83302e;  /* dark red */
+}
+
+/* Timer view button bar */
+.timer-view-buttons
+{
+    bottom: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+/***********************
+ * Bootstrap overrides *
+ ***********************/
+
+.btn-default,
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default
+{
+    background: none;
+    border-color: #111;
+    color: #111;
+}
+
+.form-group input
+{
+    background-color: #000;
+    color: #fff;
+}
+
+.form-group input:disabled
+{
+    background-color: #222;
+    border-color: #777;
+    color: #777;
+}
+
+.panel-default
+{
+    background-color: #000;
+}
