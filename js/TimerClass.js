@@ -16,12 +16,20 @@ function Timer() {
     this.Offset = 0;
     this.StartTime = new Date();
     this.EndTime = new Date();
+    this.PreCountdownOffset = 21 * 1000; // in milliseconds
+    this.FinalCountdownOffset = 21 * 1000; // in milliseconds
     this.Label = null;
     this.Panel = null;
     this.CountdownLabel = null;
+    this.IsStarted = false;
+    this.IsStarting = false;
+    this.IsFinishing = false;
+    this.IsFinished = false;
+    this.IsAnimating = false;
+    this.AnimateClass = 'timer2';
 }
 
-// Timer class methods
+/* Timer class methods */
 
 // Method to shift timer to the next spot on screen
 Timer.prototype.Bump = function () {
@@ -46,13 +54,19 @@ Timer.prototype.Bump = function () {
 Timer.prototype.GetRemainingTime = function () {
     var now = new Date();
 
+    // Update timer status properties
+    this.IsStarting = now < this.StartTime && now.getTime() >= this.StartTime.getTime() - this.PreCountdownOffset;
+    this.IsStarted = now >= this.StartTime;
+    this.IsFinishing = now < this.EndTime && now.getTime() >= this.EndTime.getTime() - this.FinalCountdownOffset;
+    this.IsFinished = now >= this.EndTime;
+
     // If timer has started or is within 21 seconds of starting and hasn't expired...
-    if (now.getTime() >= this.StartTime.getTime() - 21 * 1000 && now < this.EndTime)
+    if ((this.IsStarting || this.IsStarted) && !this.IsFinished)
     {
         var totalSeconds;
 
         // If timer has started, return normal countdown
-        if (now >= this.StartTime)
+        if (this.IsStarted)
         {
             // Date substraction returns the difference in milliseconds, and Date.setTime() gives us a weird result
             //   So we'll have to parse it out manually
@@ -87,4 +101,30 @@ Timer.prototype.UpdateLabel = function (value) {
 // Method to update the timer countdown span
 Timer.prototype.Refresh = function () {
     this.CountdownLabel.html(this.GetRemainingTime());
+
+    // If timer is in Finishing state, add a 'flashing' animation
+    if (this.IsFinishing && !this.IsFinished)
+    {
+        if (!this.IsAnimating)
+        {
+            if (this.CountdownLabel.hasClass(this.AnimateClass))
+            {
+                this.IsAnimating = true;
+                this.CountdownLabel.removeClass(
+                    this.AnimateClass,
+                    'slow',
+                    function () { this.IsAnimating = false; }
+                );
+            }
+            else
+            {
+                this.IsAnimating = true;
+                this.CountdownLabel.addClass(
+                    this.AnimateClass,
+                    'slow',
+                    function () { this.IsAnimating = false; }
+                );
+            }
+        }
+    }
 };

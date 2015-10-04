@@ -108,8 +108,6 @@ TimerCollection.prototype.Start = function () {
         // Cache this timer as previous
         previous = timer;
     });
-
-    // Make sure first timer is visible 
 };
 
 // Method to refresh timer view (usually called by a setInterval method)

@@ -1,4 +1,47 @@
-﻿/************************
+﻿/***********************
+ * Bootstrap overrides *
+ ***********************/
+
+*
+{
+    -web-kit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+}
+
+.btn-default,
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default
+{
+    background: none;
+    border-color: #222;
+    color: #222;
+    outline-color: #333;
+}
+
+.form-group input
+{
+    background-color: #000;
+    color: #fff;
+}
+
+.form-group input:disabled
+{
+    background-color: #222;
+    border-color: #777;
+    color: #777;
+}
+
+.panel-default
+{
+    background-color: #000;
+}
+
+
+/************************
  * Non-Bootstrap styles *
  ************************/
 
@@ -25,6 +68,15 @@ div.template
     top: 0;
     width: 100%;
     z-index: 100;
+}
+
+/* Timer view button bar */
+.timer-view-buttons
+{
+    bottom: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
 }
 
 .top-half,
@@ -107,7 +159,9 @@ div.template
 .top-half .description,
 .bottom-half .description
 {
-    font-size: 140pt;
+    font-size: 10.5vw;
+    line-height: 9.5vw;
+    top: 10%;
 }
 
 .top-left-quad .description,
@@ -115,8 +169,9 @@ div.template
 .bottom-left-quad .description,
 .bottom-right-quad .description
 {
-    font-size: 100pt;
-    top: 20%;
+    font-size: 5vw;
+    line-height: 4.5vw;
+    top: 30%;
 }
 
 .top-half .timer,
@@ -124,8 +179,9 @@ div.template
 .bottom-half .timer,
 .bottom-half .timer2
 {
-    font-size: 300pt;
-    line-height: 275pt;
+    font-size: 21vw;
+    line-height: 19vw;
+    top: 10%;
 }
 
 .top-left-quad .timer,
@@ -137,54 +193,12 @@ div.template
 .bottom-right-quad .timer,
 .bottom-right-quad .timer2
 {
-    font-size: 175pt;
-    top: 10%;
+    font-size: 10.5vw;
+    line-height: 9.5vw;
+    top: 30%;
 }
 
 .timer2
 {
     color: #83302e;  /* dark red */
-}
-
-/* Timer view button bar */
-.timer-view-buttons
-{
-    bottom: 0;
-    position: absolute;
-    text-align: center;
-    width: 100%;
-}
-
-/***********************
- * Bootstrap overrides *
- ***********************/
-
-.btn-default,
-.btn-default:hover,
-.btn-default:focus,
-.btn-default:active,
-.btn-default.active,
-.open > .dropdown-toggle.btn-default
-{
-    background: none;
-    border-color: #111;
-    color: #111;
-}
-
-.form-group input
-{
-    background-color: #000;
-    color: #fff;
-}
-
-.form-group input:disabled
-{
-    background-color: #222;
-    border-color: #777;
-    color: #777;
-}
-
-.panel-default
-{
-    background-color: #000;
 }
