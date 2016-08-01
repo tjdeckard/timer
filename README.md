@@ -21,9 +21,9 @@ This screen was designed to have a minimal, barely visible UI. Controls are loca
 * Begin by clicking Show Next to display the label of the first timer.
 * Click Start Timers! to begin the first timer.
 * Click the Show Next button to display the label of the second timer.
-** This timer will automatically start after the configured time and will display a 20 second countdown before it starts.
+  * This timer will automatically start after the configured time and will display a 20 second countdown before it starts.
 * Click the Show Next button to display the label of the third timer.
-** Again, the timer will automatically start on its own.
+  * Again, the timer will automatically start on its own.
 * Click Show Next to cycle back to Timer 1 once all 3 timers have started.
 * Once Timer 1 expires, click Show Next to focus Timer 2.
 * Once Timer 2 expries, click Show Next to focus Timer 3.
